@@ -1,0 +1,37 @@
+
+<div class="container">
+    <form [formGroup]="corporateCustomerForm" (submit)="addCorporateCustumer()" style="margin: 15px;">
+        <div class="card">
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                    <h5>Company Name</h5>
+                    <input type="text" placeholder="enter your company name" pInputText class="form-control" formControlName="companyName"> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                    <h5>Tax Number</h5>
+                    <input type="text" placeholder="enter your tax number" pInputText class="form-control" formControlName="taxNumber"> 
+                </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                    <h5>Email</h5>
+                    <input type="text" placeholder="enter your email address" pInputText class="form-control" formControlName="email">
+                </div>
+                </div>
+                <div class="col-md-6">  
+                    <div class="p-field p-col-12 p-md-4">
+                    <h5>Password</h5>
+                  <p-password class="form-control" placeholder="enter your password" formControlName="password" [toggleMask]="true"></p-password>
+                </div>   
+                </div>
+            </div>  
+        </div>
+        <br>
+       <button pButton pRipple type="submit" label="Add Corporate Customer"  class="p-button-success"></button> 
+    </form>
+</div>

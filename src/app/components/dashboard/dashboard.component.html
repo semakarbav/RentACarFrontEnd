@@ -1,0 +1,38 @@
+<div class="container">
+    <br>
+<p-carousel [value]="cars" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template let-car pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div class="mb-3">
+                    <img [src]="'assets/showcase/bmw.jpg/'" [alt]="car.description" class="product-image" />
+                </div>
+                <div>
+                    <h4 class="mb-1">{{car.description}}</h4>
+                    <h6 class="mt-0 mb-3">₺{{car.dailyPrice}}</h6>
+                   
+                    <div class="car-buttons mt-5">
+                        <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                        <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
+                        <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+<div style="margin-top: 15px; margin-left: 5px;">
+    <br>
+    <h4 style="text-align: center;">Users Comments</h4>
+    <br>
+<app-user-comment></app-user-comment>
+</div>
+<div  style="margin-top: 15px;">
+    <br>
+    <h4 style="text-align: center;">Campaigns</h4>
+    <br>
+<app-campaign></app-campaign>
+</div>
+</div>

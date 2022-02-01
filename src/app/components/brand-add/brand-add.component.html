@@ -1,0 +1,19 @@
+<div class="container">
+<div class="col-md-6">
+  
+<form [formGroup]="brandAddForm!">
+ <div class="field">
+    <label for="brandName" class="block">Brand Name</label>
+    <input id="brandName" class="form-control"  formControlName="name" input/>
+    <div>
+    <div *ngIf="brandAddForm.get('name').hasError('required')  && brandAddForm.get('name').invalid"
+   class="p-error block input">Enter a valid brand name</div>
+</div>
+</div> 
+</form>
+
+<button  type="submit" (click)="addBrand()" class="btn btn-success input">Add</button>
+<button type="submit" class="btn btn-danger input">Cancel</button>
+
+</div>
+</div>

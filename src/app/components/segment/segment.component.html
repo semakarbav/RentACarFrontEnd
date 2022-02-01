@@ -1,0 +1,6 @@
+<h5> Segments</h5>
+<p-button label="Add Segment" icon="pi pi-check" styleClass="p-button-sm"></p-button>
+<br>
+<p-listbox (click)="setCurrentSegment(segment!)" [options]="segments" [(ngModel)]="segment" optionLabel="name"
+ routerLink="cars/segment/{{segment?.id}}" [style]="{'width':'15rem'}"></p-listbox>
+<br>

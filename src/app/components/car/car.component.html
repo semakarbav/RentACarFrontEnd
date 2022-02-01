@@ -1,0 +1,29 @@
+<div class="container" style="margin-top: 10px;">
+    <div class="row">
+        <div class="card">
+            <button pButton pRipple type="button" label="Add Car" routerLink="/cars/car-add"
+                class="p-button-success"></button>
+            <p-dataView #dv [value]="cars" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField!"
+                [sortOrder]="sortOrder!" layout="grid">
+                <ng-template let-car pTemplate="gridItem">
+                    <div class="p-col-12 p-md-2">
+                        <div class="product-grid-item card">
+                            <div class="product-grid-item-top">
+                                <div>
+                                    <span class="product-category">Model Year: {{car.modelYear}}</span>
+                                </div>
+                            </div>
+                            <div class="product-grid-item-content">
+                                <img style="width: 500px; height: 350px;" [src]="'assets/showcase/bmw.jpg/'" />
+                                <div class="product-description">{{car.description}}</div>
+                            </div>
+                            <div class="product-grid-item-bottom">
+                                <span class="product-price">{{car.dailyPrice}}₺</span>
+                                <p-button routerLink="/cars/car-detail/{{car.id}}">Car Details</p-button>
+                            </div>
+                        </div>
+                    </div>
+        </ng-template>
+        </p-dataView>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<form>
+    <div [formGroup]="cardDetailForm">
+    <p-card>
+        <ng-template   pTemplate="title">
+            Payment Information
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+            Enter your card details
+        </ng-template>
+        <ng-template pTemplate="content">
+            <div class="p-fluid formgrid grid">
+                <div class="field col-12">
+                    <label for="class">Card Holder Name</label>
+                    <input type="text" required pInputText class="form-control" formControlName="cardHoldName"> 
+                </div>
+               
+                <div class="field col-8">
+                    <label id="number" for="number">Number</label>
+                    <p-inputMask inputId="number" mask="9999-9999-9999-9999" class="form-control" formControlName="cardNo"></p-inputMask>
+                </div>
+                <div class="row">
+                <div class="field col-2">
+                    <label id="date" for="date">Month</label>
+                    <p-inputMask inputId="date" mask="99"class="form-control" formControlName="month"></p-inputMask>
+                </div>
+                <div class="field col-2">
+                    <label id="date" for="date">Year</label>
+                    <p-inputMask inputId="date" mask="99" class="form-control" formControlName="year"></p-inputMask>
+                </div>
+                <div class="field col-2">
+                    <label for="cvv">CVV</label>
+                    <p-inputMask id="cvv" mask="999" class="form-control" formControlName="cvv"></p-inputMask>
+                </div>
+                </div>
+                <div class="field col-8">
+                    <label for="class">Customer Id</label>
+                    <input type="text" required pInputText class="form-control" formControlName="customerId"> 
+                </div>
+               
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="grid grid-nogutter justify-content-end">
+               
+                <p-button type="button" label="Ödeme Yap" (onClick)="addCardDetail()" icon="pi pi-angle-right" iconPos="right"></p-button>
+            </div>
+        </ng-template>
+    </p-card>
+</div> 
+</form>

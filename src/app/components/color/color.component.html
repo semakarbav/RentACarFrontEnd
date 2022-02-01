@@ -1,0 +1,4 @@
+<h5> Colors</h5>
+<p-button label="Add Color" routerLink="/cars/color-add"  icon="pi pi-check" styleClass="p-button-sm"></p-button>
+<br>
+<p-listbox (click)="setCurrentColor(color!)" [options]="colors" [(ngModel)]="color" routerLink="cars/color/{{color?.id}}"  optionLabel="name" [style]="{'width':'15rem'}"></p-listbox>

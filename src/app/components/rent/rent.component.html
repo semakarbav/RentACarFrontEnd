@@ -1,0 +1,136 @@
+<h5>Rent A Car</h5>
+<div class="container">
+    <form [formGroup]="rentAddForm"  style="margin: 15px;">
+        <div class="card">
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Rent Date</label>
+                        <p-calendar class="form-control" formControlName="rentDate" dateFormat="dd.mm.yy"
+                            placeholder="choose rent date" [showIcon]="true"></p-calendar>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label>Return Date</label>
+                        <p-calendar class="form-control" formControlName="returnDate" dateFormat="dd.mm.yy"
+                            placeholder="choose return date" [showIcon]="true"></p-calendar>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label for="integeronly">Rented Kilometer</label>
+                        <p-inputNumber placeholder="enter rented kilometer" class="form-control"
+                            formControlName="rentedKilometer">
+                        </p-inputNumber>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label for="integeronly">Returned Kilometer</label>
+                        <p-inputNumber placeholder="enter returned kilometer" class="form-control"
+                            formControlName="returnedKilometer">
+                        </p-inputNumber>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <p-dropdown [options]="cities" class="form-control" formControlName="pickUpCityId"
+                            placeholder="Select a pick up city" optionValue="id" optionLabel="name" [showClear]="true">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <p-dropdown [options]="cities" class="form-control" formControlName="returnCityId"
+                            placeholder="Select a return city" optionValue="id" optionLabel="name" [showClear]="true">
+                        </p-dropdown>
+                    </div>
+                </div>
+            </div>
+            <!-- <div>
+                <app-customers></app-customers>
+            </div> -->
+            <div class="row" style="margin: 15px;">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label for="integeronly">Customer Id</label>
+                        <p-inputNumber placeholder="enter customer Id" class="form-control"
+                            formControlName="customerId">
+                        </p-inputNumber>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px;">
+                <div class="p-field p-col-12 p-md-12">
+                    <label for="integeronly">Car Id</label>
+                    <p-inputNumber placeholder="enter car Id" class="form-control" formControlName="carId">
+                    </p-inputNumber> 
+                </div>
+            </div> 
+        </div>
+       <div>
+        <br>
+    <p-table #dt [value]="additionalServices" [(selection)]="selectedAdditionalServices" dataKey="id" styleClass="p-datatable-customers" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" 
+    [paginator]="true">
+    
+    <ng-template pTemplate="caption">
+        <div class="table-header">
+          Additional Services
+           
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 3rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th pSortableColumn="name">
+                <div class="flex justify-content-between align-items-center">
+                    Additional Service
+                    <p-sortIcon field="name"></p-sortIcon>
+                    <p-columnFilter type="text" field="name" display="menu" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+            
+            <th pSortableColumn="price">
+                <div class="flex justify-content-between align-items-center">
+                    Price
+                    <p-sortIcon field="price"></p-sortIcon>
+                    <p-columnFilter type="numeric" field="price" display="menu" currency="USD" class="ml-auto"></p-columnFilter>
+                </div>
+            </th>
+           
+           
+            <th style="width: 8rem"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-additionalService>
+        <tr class="p-selectable-row">
+            <td>
+                <p-tableCheckbox  [value]="additionalService"></p-tableCheckbox>
+            </td>
+            <td>
+                <span class="p-column-title">Name</span>
+                {{additionalService.name}}
+            </td>
+            <td>
+                <span class="p-column-title">Price</span>
+                {{additionalService.price}}₺
+            </td>
+        </tr>
+    </ng-template>
+    
+</p-table>
+
+       </div>
+        <br>
+        <button pButton (click)="addRentalIndividualCustomer()" type="button" label="Rent for ındividual customer a Car" class="p-button-success" style="margin-right: 5px;"></button>
+        <button pButton (click)="addRentalCorporateCustomer()"  type="button" label="Rent  for corporate customer a Car" class="p-button-success"></button>
+    </form>
+</div>

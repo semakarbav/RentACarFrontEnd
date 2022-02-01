@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="col-md-6">
+      
+    <form [formGroup]="colorAddForm!">
+     <div class="field">
+        <label for="colorName" class="block">Color Name</label>
+        <input id="colorName" class="form-control"  formControlName="name" input/>
+        <div>
+        <div *ngIf="colorAddForm.get('name').hasError('required')  && colorAddForm.get('name').invalid"
+       class="p-error block input">Enter a valid color name</div>
+    </div>
+    </div> 
+    </form>
+    
+    <button  type="submit" (click)="addColor()" class="btn btn-success input">Add</button>
+    <button type="submit" class="btn btn-danger input">Cancel</button>
+    
+    </div>
+    </div>

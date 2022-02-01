@@ -1,0 +1,6 @@
+<h5> Brands</h5>
+<p-button label="Add Brand" routerLink="/cars/brand-add" icon="pi pi-check" styleClass="p-button-sm"></p-button>
+<br>
+<p-listbox (click)="setCurrentBrand(brand!)" [options]="brands" [(ngModel)]="brand" optionLabel="name"
+ routerLink="cars/brand/{{brand?.id}}" [style]="{'width':'15rem'}"></p-listbox>
+<br>

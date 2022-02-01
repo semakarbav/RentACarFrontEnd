@@ -1,0 +1,17 @@
+<br>
+<p-card  header="{{car?.description}}"  [style]="{width: '760px'}" styleClass="p-card-shadow">
+    <ng-template let-car pTemplate="header">
+        <img alt="Card" src="assets/showcase/bmw.jpg">
+    </ng-template>
+    <h5>daily Price:  ${{car?.dailyPrice}}</h5>
+    <h5>model year: {{car?.modelYear}}</h5>
+    <h5>findex Score: {{car?.findexScore}}</h5>
+    <h5>Kilometer: {{car?.kilometer}}</h5>
+    <h5>Renk: {{car?.colorName}}</h5>
+    <h5>Brand: {{car?.brandName}}</h5>
+    
+    <ng-template pTemplate="footer">
+        <p-button routerLink="/car-detail/rent/{{car?.id}}" label="Kirala" icon="pi pi-check"></p-button>
+       
+    </ng-template>
+</p-card>

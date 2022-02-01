@@ -1,0 +1,56 @@
+<div class="container">
+    <form [formGroup]="individualCustomerAddForm" (submit)="addIndividualCustomer()" style="margin: 15px">
+        <div class="card">
+            <div class="row" style="margin: 15px">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <h5>First Name</h5>
+                        <input type="text" placeholder="enter your first name" pInputText class="form-control"
+                            formControlName="firstName" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <h5>Last Name</h5>
+                        <input type="text" placeholder="enter your last name" pInputText class="form-control"
+                            formControlName="lastName" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <h5>Email</h5>
+                        <input type="text" placeholder="enter your email address" pInputText class="form-control"
+                            formControlName="email" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <h5>Password</h5>
+                        <p-password class="form-control" placeholder="enter your password" formControlName="password"
+                            [toggleMask]="true"></p-password>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin: 15px">
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <h5>Nationality Id</h5>
+                        <input type="text" placeholder="enter your nationality Id" pInputText class="form-control"
+                            formControlName="tcNumber" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-field p-col-12 p-md-4">
+                        <label >Birth Date</label>
+                        <p-calendar class="form-control" formControlName="birthDate" dateFormat="dd.mm.yy"
+                            placeholder="choose return date" [showIcon]="true" ></p-calendar>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <br>
+             <button pButton pRipple type="submit" label="Add Individual Customer"  class="p-button-success"></button>
+    </form>
+</div>

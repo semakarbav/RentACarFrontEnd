@@ -1,0 +1,67 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title"> Add Car</h5>
+                <div class="card-body">
+                    <form [formGroup]="carAddForm" (submit)="addCar()">
+                        <div class="field">
+                            <label for="description" class="block">Description</label>
+                            <input id="description" class="form-control"  formControlName="description" input/>
+                            <div *ngIf="carAddForm.get('description').hasError('required')  && carAddForm.get('description').invalid"
+                           class="p-error block input">Enter a valid desctription</div>
+                         </div> 
+                         <div class="field">
+                            <label for="modelYear" class="block">Model Year</label>
+                            <input id="modelYear" class="form-control"  formControlName="modelYear" input/>
+                            <div>
+                            <div *ngIf="carAddForm.get('modelYear').hasError('required')  && carAddForm.get('modelYear').invalid"
+                           class="p-error block input">Enter a valid model year</div>
+                        </div>
+                        </div> 
+                        <div class="field">
+                            <label for="dailyPrice" class="block">Daily Price</label>
+                            <input id="dailyPrice" class="form-control"  formControlName="dailyPrice" input/>
+                            <div *ngIf="carAddForm.get('dailyPrice').hasError('dailyPrice')  && carAddForm.get('dailyPrice').invalid"
+                           class="p-error block input">Enter a valid daily price</div>
+                        </div>
+                        <div class="field">
+                            <label for="kilometer" class="block">Kilometer</label>
+                            <input id="kilometer" class="form-control"  formControlName="kilometer" input/>
+                            <div *ngIf="carAddForm.get('kilometer').hasError('kilometer')  && carAddForm.get('kilometer').invalid"
+                           class="p-error block input">Enter a valid kilometer</div>
+                        </div>
+                        <div class="field">
+                            <label for="minAge" class="block">Minumum Age</label>
+                            <input id="minAge" class="form-control"  formControlName="minAge" input/>
+                            <div *ngIf="carAddForm.get('minAge').hasError('minAge')  && carAddForm.get('minAge').invalid"
+                           class="p-error block input">Enter a valid kilometer</div>
+                        </div>
+                        <div class="field">
+                            <label for="findexScore" class="block">Findex Score</label>
+                            <input id="findexScore" class="form-control"  formControlName="findexScore" input/>
+                            <div *ngIf="carAddForm.get('findexScore').hasError('findexScore')  && carAddForm.get('findexScore').invalid"
+                           class="p-error block input">Enter a valid findex score</div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                    <div class="col-md-4">
+                        <p-dropdown  [options]="colors"  class="form-control"  formControlName="colorId"  placeholder="Select a Color" optionValue="id" optionLabel="name" [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="col-md-4">
+
+                        <p-dropdown  [options]="brands" class="form-control" formControlName="brandId" placeholder="Select a Brand" optionValue="id" optionLabel="name" [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="col-md-4">
+
+                        <p-dropdown  [options]="segments" class="form-control" formControlName="segmentId" placeholder="Select a Segment" optionValue="id" optionLabel="name" [showClear]="true"></p-dropdown>
+                    </div>
+
+                    </div>
+                    <br>
+                    <button pButton pRipple type="submit" label="Add Car"  class="p-button-success"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
